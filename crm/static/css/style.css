@@ -1,0 +1,10 @@
+.port{
+    height: 100vh;
+}
+.grad{
+    background-color: #4158D0;
+    background-image: linear-gradient(43deg, #081e8d 0%, #C850C0 46%, #fcba40 100%);
+}
+.body{
+    background-image:("https://images.pexels.com/photos/2883049/pexels-photo-2883049.jpeg?auto=compress&cs=tinysrgb&w=600");
+}

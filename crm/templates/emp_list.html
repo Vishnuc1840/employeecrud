@@ -1,0 +1,96 @@
+
+{%extends 'base.html'%}
+
+{%block body_block%}
+
+<div class="m-3">
+    Filter by Department
+    
+        {%for dep in departments%}
+        <a href="{%url 'emp-all'%}?department={{dep}}">{{dep}}</a>
+
+
+        {%endfor%}
+
+</div>
+
+
+    <div class="container d-flex">
+        <div class="row">
+            <div class="col-2"></div>
+            <div class="col-8">
+                <form action="" method="post " class="d-flex">
+                    {%csrf_token%}
+
+                    <div class="d-flex ">
+                    <input type="text" name="box" class="form_control">
+                    <button type="submit" class="btn btn-success ms-3">Search</button>
+                    </div>
+                </form>
+
+
+
+
+
+            </div>
+            <div class="col-2"></div>
+        </div>
+
+
+    </div>
+
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-2"></div>
+        <div class="col-8  md-4">
+            <table class="table table-primary table-striped caption-top">
+                <tr >
+                    <th>Name</th>
+                    <th>Department</th>
+                    <th>Salary</th>
+                    <th>Email</th>
+                    <td>Action</td>
+                </tr>
+
+                <h1>Employee List</h1>
+
+                {%for emp in data%}
+                <tr>
+                    <td>{{emp.name}}</td>
+                    <td>{{emp.department}}</td>
+                    <td>{{emp.salary}}</td>
+                    <td>{{emp.email}}</td>
+                    <td>
+                        <a href="{%url 'emp-details' emp.id%}">View</a>
+                        <a href="{%url 'emp-delete' emp.id%}">Delete</a>
+                        <a href="{%url 'emp-edit' emp.id%}">Edit</a>
+
+
+
+
+
+                    </td>
+                </tr>
+                
+            
+                {%endfor%}
+
+
+            </table>
+        </div>
+        <div class="col-2"></div>
+
+
+
+
+
+</div>
+
+</div>
+
+{%endblock%}
+
+
+
